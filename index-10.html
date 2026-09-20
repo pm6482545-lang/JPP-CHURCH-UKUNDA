@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Jesus Palace of Praise (JPP) — Ukunda, Diani</title>
+<meta name="description" content="Jesus Palace of Praise (JPP), Ukunda — a transformed church of God through Christ, transforming others.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --charcoal: #211c18;
+    --charcoal-soft: #3a332c;
+    --orange: #c1541c;
+    --orange-deep: #9c3f13;
+    --gold: #b8862e;
+    --grey-light: #edebe7;
+    --cream: #faf8f5;
+    --white: #ffffff;
+    --line: rgba(33,28,24,0.12);
+    --bg: var(--cream);
+    --text: var(--charcoal);
+    --text-soft: #6b5f54;
+    --surface: var(--white);
+    --surface-alt: var(--grey-light);
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  :root:not([data-theme="light"]) {
+    @media (prefers-color-scheme: dark) {
+      --bg: #17130f;
+      --text: #f3ede4;
+      --text-soft: #c9bcac;
+      --surface: #1f1a14;
+      --surface-alt: #241e17;
+      --line: rgba(243,237,228,0.12);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #17130f;
+    --text: #f3ede4;
+    --text-soft: #c9bcac;
+    --surface: #1f1a14;
+    --surface-alt: #241e17;
+    --line: rgba(243,237,228,0.12);
+  }
+  html { scroll-behavior: smooth; scroll-padding-top: calc(78px + env(safe-area-inset-top, 0px)); }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Karla', -apple-system, sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  h1, h2, h3, .display { font-family: 'Fraunces', Georgia, serif; font-weight: 600; letter-spacing: -0.01em; color: var(--text); }
+  a { color: inherit; }
+  img { max-width: 100%; display: block; }
+  section { padding: 96px 24px; }
+  .wrap { max-width: 1120px; margin: 0 auto; }
+  .wrap-narrow { max-width: 760px; margin: 0 auto; }
+
+  /* ---------- Nav ---------- */
+  .nav {
+    position: sticky; top: 0; z-index: 50;
+    padding-top: env(safe-area-inset-top, 0px);
+    background: rgba(250,248,245,0.86);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+  }
+  :root[data-theme="dark"] .nav, :root:not([data-theme="light"]) .nav { background: rgba(23,19,15,0.86); }
+  @media (prefers-color-scheme: dark) { .nav { background: rgba(23,19,15,0.86); } }
+  .nav-inner { max-width: 1120px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 14px 24px; }
+  .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+  .brand-mark { width: 40px; height: 40px; border-radius: 50%; overflow: hidden; flex-shrink: 0; border: 1.5px solid var(--orange); background: var(--surface-alt); }
+  .brand-mark img { width: 100%; height: 100%; object-fit: cover; }
+  .brand-name { font-family: 'Fraunces', serif; font-weight: 600; font-size: 1.05rem; line-height: 1.1; }
+  .brand-name small { display: block; font-family: 'Karla', sans-serif; font-weight: 500; font-size: 0.66rem; letter-spacing: 0.06em; color: var(--text-soft); margin-top: 2px; }
+  .nav-links { display: flex; gap: 28px; list-style: none; margin: 0; padding: 0; font-size: 0.92rem; }
+  .nav-links a { text-decoration: none; color: var(--text-soft); transition: color .2s; }
+  .nav-links a:hover, .nav-links a:focus-visible { color: var(--orange); }
+  .nav-cta { background: var(--orange); color: #fff; padding: 9px 18px; border-radius: 3px; text-decoration: none; font-size: 0.88rem; font-weight: 600; white-space: nowrap; }
+  .nav-cta:hover { background: var(--orange-deep); }
+  .nav-toggle { display: none; }
+  @media (max-width: 760px) {
+    .nav-links { display: none; }
+    .nav-toggle { display: block; background: none; border: none; color: var(--text); font-size: 1.4rem; cursor: pointer; }
+  }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    position: relative;
+    min-height: 92vh;
+    display: flex;
+    align-items: center;
+    padding: 140px 24px 80px;
+    background: radial-gradient(ellipse at 50% -10%, #2c241d 0%, var(--charcoal) 55%, #16120e 100%);
+    color: #f3ede4;
+    overflow: hidden;
+    isolation: isolate;
+  }
+  .hero-rays { position: absolute; inset: 0; z-index: -2; opacity: 0.55; }
+  .ray {
+    position: absolute; left: 50%; top: 8%;
+    width: 2px; height: 60%;
+    background: linear-gradient(to bottom, rgba(193,84,28,0.55), transparent);
+    transform-origin: top center;
+    animation: rayfade 6s ease-in-out infinite;
+  }
+  @keyframes rayfade { 0%,100% { opacity: 0.25; } 50% { opacity: 0.7; } }
+  .hero-glow {
+    position: absolute; left: 50%; top: 30%; width: 640px; height: 640px;
+    background: radial-gradient(circle, rgba(193,84,28,0.35) 0%, rgba(193,84,28,0) 68%);
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    animation: pulse 5s ease-in-out infinite;
+  }
+  @keyframes pulse { 0%,100% { opacity: 0.7; transform: translate(-50%,-50%) scale(1); } 50% { opacity: 1; transform: translate(-50%,-50%) scale(1.08); } }
+  .hero-inner { max-width: 780px; margin: 0 auto; text-align: center; position: relative; }
+  .hero-crest {
+    width: 88px; height: 88px; margin: 0 auto 28px; border-radius: 50%;
+    border: 1.5px solid rgba(255,255,255,0.35);
+    background: var(--surface-alt);
+    overflow: hidden;
+    opacity: 0; transform: translateY(14px);
+    animation: rise .9s ease forwards .1s;
+  }
+  .hero-crest img { width: 100%; height: 100%; object-fit: cover; }
+  .hero-verse { font-size: 0.82rem; letter-spacing: 0.08em; color: #d8a978; margin: 0 0 18px; opacity: 0; animation: rise .9s ease forwards .25s; }
+  .hero h1 {
+    font-size: clamp(2.4rem, 6vw, 4.1rem);
+    line-height: 1.06; margin: 0 0 22px; color: #fff;
+    opacity: 0; transform: translateY(18px);
+    animation: rise 1s ease forwards .4s;
+  }
+  .hero h1 em { font-style: italic; color: #e08a52; }
+  .hero p.lede {
+    font-size: 1.12rem; color: #d8cfc4; max-width: 560px; margin: 0 auto 36px;
+    opacity: 0; animation: rise .9s ease forwards .6s;
+  }
+  .hero-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; opacity: 0; animation: rise .9s ease forwards .75s; }
+  @keyframes rise { to { opacity: 1; transform: translateY(0); } }
+  .btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px; border-radius: 3px; text-decoration: none; font-weight: 600; font-size: 0.95rem; border: 1px solid transparent; transition: transform .2s, background .2s, border-color .2s; }
+  .btn:hover { transform: translateY(-2px); }
+  .btn-solid { background: var(--orange); color: #fff; }
+  .btn-solid:hover { background: var(--orange-deep); }
+  .btn-ghost { border-color: rgba(255,255,255,0.35); color: #fff; }
+  .btn-ghost:hover { border-color: #fff; }
+  .btn-dark { border-color: var(--charcoal); color: var(--charcoal); }
+  .btn-dark:hover { background: var(--charcoal); color: #fff; }
+  @media (prefers-reduced-motion: reduce) {
+    .hero-crest, .hero-verse, .hero h1, .hero p.lede, .hero-actions { animation: none; opacity: 1; transform: none; }
+    .ray, .hero-glow { animation: none; }
+  }
+
+  /* ---------- Eyebrow / section head ---------- */
+  .kicker { color: var(--orange); font-weight: 600; font-size: 0.9rem; margin: 0 0 10px; }
+  .section-head { max-width: 620px; margin: 0 0 52px; }
+  .section-head.center { margin-left: auto; margin-right: auto; text-align: center; }
+  .section-head h2 { font-size: clamp(1.9rem, 3.6vw, 2.6rem); margin: 0 0 14px; }
+  .section-head p { color: var(--text-soft); font-size: 1.05rem; margin: 0; }
+
+  /* ---------- Welcome / Vision-Mission ---------- */
+  .welcome { background: var(--surface); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .vm-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
+  @media (max-width: 780px) { .vm-grid { grid-template-columns: 1fr; gap: 40px; } }
+  .vm-card .num { font-family: 'Fraunces', serif; font-style: italic; color: var(--orange); font-size: 1.05rem; margin-bottom: 10px; display: block; }
+  .vm-card h3 { font-size: 1.5rem; margin: 0 0 14px; }
+  .vm-card p { color: var(--text-soft); font-size: 1.05rem; }
+  .verse-tag { display: inline-block; margin-top: 18px; font-size: 0.85rem; color: var(--gold); border-top: 1px solid var(--line); padding-top: 12px; }
+
+  /* ---------- Core values ---------- */
+  .values { background: var(--bg); }
+  .value-flow { display: flex; flex-wrap: wrap; gap: 14px; }
+  .value-pill {
+    border: 1px solid var(--line); border-radius: 999px; padding: 14px 22px;
+    display: flex; align-items: center; gap: 10px; font-size: 1rem; background: var(--surface);
+  }
+  .value-pill .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--orange); flex-shrink: 0; }
+
+  /* ---------- Worship in motion ---------- */
+  .motion { background: var(--charcoal); color: #f3ede4; position: relative; overflow: hidden; }
+  .motion .section-head p { color: #c9bcac; }
+  .motion .kicker { color: #e08a52; }
+  .motion-tabs { display: flex; gap: 10px; margin-bottom: 40px; flex-wrap: wrap; }
+  .motion-tab {
+    background: transparent; border: 1px solid rgba(243,237,228,0.25); color: #d8cfc4;
+    padding: 11px 20px; border-radius: 999px; font-size: 0.92rem; font-family: 'Karla', sans-serif; cursor: pointer;
+    transition: all .25s;
+  }
+  .motion-tab[aria-selected="true"] { background: var(--orange); border-color: var(--orange); color: #fff; }
+  .motion-stage { position: relative; border: 1px solid rgba(243,237,228,0.15); border-radius: 6px; overflow: hidden; background: #1b1611; min-height: 340px; }
+  .motion-panel { display: none; padding: 48px; min-height: 340px; align-items: center; }
+  .motion-panel[data-active="true"] { display: flex; }
+  .motion-panel-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; width: 100%; }
+  @media (max-width: 780px) { .motion-panel-grid { grid-template-columns: 1fr; } .motion-panel { padding: 32px 24px; } }
+  .motion-copy h3 { color: #fff; font-size: 1.7rem; margin: 0 0 12px; }
+  .motion-copy p { color: #c9bcac; margin: 0; }
+  .scene { position: relative; height: 220px; border-radius: 4px; background: radial-gradient(ellipse at 50% 110%, rgba(193,84,28,0.3), transparent 70%); overflow: hidden; }
+  /* Preaching scene: rising light + podium mark */
+  .scene-preach .beam { position: absolute; left: 50%; bottom: 0; width: 140px; height: 100%; transform: translateX(-50%); background: linear-gradient(to top, rgba(193,84,28,0.5), transparent); animation: sway 4s ease-in-out infinite; }
+  @keyframes sway { 0%,100% { transform: translateX(-50%) scaleY(1); } 50% { transform: translateX(-50%) scaleY(1.12); } }
+  .scene-preach .word { position: absolute; font-family: 'Fraunces', serif; font-style: italic; color: rgba(216,169,120,0.8); font-size: 0.95rem; animation: floatup 6s linear infinite; }
+  @keyframes floatup { 0% { opacity: 0; transform: translateY(0); } 15% { opacity: 1; } 85% { opacity: 1; } 100% { opacity: 0; transform: translateY(-140px); } }
+  /* Praise scene: bar equalizer */
+  .scene-praise { display: flex; align-items: flex-end; justify-content: center; gap: 8px; }
+  .scene-praise .bar { width: 10px; background: linear-gradient(to top, var(--orange), var(--gold)); border-radius: 2px; animation: eq 1.1s ease-in-out infinite; }
+  @keyframes eq { 0%,100% { height: 20%; } 50% { height: 85%; } }
+  /* Worship scene: rising particles */
+  .scene-worship .particle { position: absolute; bottom: -10px; width: 5px; height: 5px; border-radius: 50%; background: var(--gold); opacity: 0.8; animation: rise-p 5s linear infinite; }
+  @keyframes rise-p { 0% { transform: translateY(0) scale(1); opacity: 0; } 10% { opacity: 0.9; } 100% { transform: translateY(-220px) scale(0.4); opacity: 0; } }
+
+  /* ---------- Leadership ---------- */
+  .leaders { background: var(--surface); border-top: 1px solid var(--line); }
+  .leader-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+  @media (max-width: 860px) { .leader-grid { grid-template-columns: 1fr; max-width: 380px; margin: 0 auto; } }
+  .leader-card { text-align: center; }
+  .photo-frame { position: relative; aspect-ratio: 4/5; border-radius: 4px; overflow: hidden; background: var(--surface-alt); margin-bottom: 20px; border: 1px solid var(--line); }
+  .photo-frame img { width: 100%; height: 100%; object-fit: cover; }
+  .photo-frame.img-missing img { display: none; }
+  .photo-frame.img-missing::after {
+    content: attr(data-label);
+    position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+    text-align: center; padding: 20px; font-family: 'Fraunces', serif; font-style: italic; color: var(--text-soft);
+    background: linear-gradient(160deg, var(--surface-alt), var(--grey-light));
+    font-size: 0.95rem;
+  }
+  .leader-card h3 { font-size: 1.2rem; margin: 0 0 4px; }
+  .leader-card .role { color: var(--orange); font-size: 0.88rem; font-weight: 600; margin: 0 0 10px; }
+  .leader-card p.bio { color: var(--text-soft); font-size: 0.92rem; margin: 0; }
+
+  /* ---------- Gallery ---------- */
+  .gallery { background: var(--bg); }
+  .gal-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+  .gal-grid .photo-frame:nth-child(1) { grid-column: span 2; grid-row: span 2; aspect-ratio: 1/1; }
+  @media (max-width: 760px) { .gal-grid { grid-template-columns: repeat(2, 1fr); } .gal-grid .photo-frame:nth-child(1) { grid-column: span 2; aspect-ratio: 16/10; } }
+
+  /* ---------- Facebook feed ---------- */
+  .fb-feed { background: var(--surface); border-top: 1px solid var(--line); }
+  .fb-card {
+    max-width: 480px; margin: 0 auto; text-align: center;
+    border: 1px solid var(--line); border-radius: 8px; padding: 48px 36px;
+    background: linear-gradient(160deg, var(--surface-alt), var(--surface));
+  }
+  .fb-card-icon {
+    width: 60px; height: 60px; margin: 0 auto 20px; border-radius: 50%;
+    background: #1877f2; display: flex; align-items: center; justify-content: center;
+  }
+  .fb-card-icon svg { width: 30px; height: 30px; fill: #fff; }
+  .fb-card h3 { margin: 0 0 10px; font-size: 1.3rem; }
+  .fb-card p { color: var(--text-soft); margin: 0 0 26px; }
+
+  /* ---------- Floating action buttons ---------- */
+  .float-actions {
+    position: fixed;
+    right: 18px;
+    bottom: calc(20px + env(safe-area-inset-bottom, 0px));
+    z-index: 90;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .float-btn {
+    width: 56px; height: 56px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: #fff; text-decoration: none;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+    transition: transform .2s;
+  }
+  .float-btn:hover { transform: scale(1.07); }
+  .float-btn svg { width: 26px; height: 26px; }
+  .float-btn.whatsapp { background: #25d366; }
+  .float-btn.call { background: var(--orange); }
+  @media (max-width: 480px) {
+    .float-btn { width: 50px; height: 50px; }
+    .float-actions { right: 14px; }
+  }
+
+  /* ---------- Footer social icons ---------- */
+  .foot-social { display: flex; gap: 10px; }
+  .foot-social a {
+    width: 38px; height: 38px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    background: rgba(243,237,228,0.08); border: 1px solid rgba(243,237,228,0.15);
+    transition: background .2s;
+  }
+  .foot-social a:hover { background: var(--orange); border-color: var(--orange); }
+  .foot-social svg { width: 18px; height: 18px; fill: #f3ede4; }
+
+  /* ---------- Service / visit ---------- */
+  .visit { background: var(--surface-alt); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .visit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+  @media (max-width: 780px) { .visit-grid { grid-template-columns: 1fr; } }
+  .time-list { list-style: none; margin: 0 0 30px; padding: 0; }
+  .time-list li { display: flex; justify-content: space-between; padding: 16px 0; border-bottom: 1px solid var(--line); }
+  .time-list li:first-child { border-top: 1px solid var(--line); }
+  .time-list .day { font-family: 'Fraunces', serif; font-size: 1.05rem; }
+  .time-list .time { color: var(--text-soft); }
+  .map-frame { border-radius: 4px; overflow: hidden; border: 1px solid var(--line); height: 100%; min-height: 320px; }
+  .map-frame iframe { width: 100%; height: 100%; min-height: 320px; border: 0; display: block; }
+
+  /* ---------- Connect ---------- */
+  .connect { background: var(--charcoal); color: #f3ede4; }
+  .connect .kicker { color: #e08a52; }
+  .connect-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; }
+  @media (max-width: 780px) { .connect-grid { grid-template-columns: 1fr; } }
+  .contact-row { display: flex; gap: 16px; padding: 18px 0; border-bottom: 1px solid rgba(243,237,228,0.15); align-items: flex-start; }
+  .contact-row .lbl { width: 90px; flex-shrink: 0; color: #a89685; font-size: 0.85rem; padding-top: 2px; }
+  .contact-row a { color: #f3ede4; text-decoration: none; }
+  .contact-row a:hover { color: var(--orange); }
+  .form { display: flex; flex-direction: column; gap: 14px; }
+  .form label { font-size: 0.85rem; color: #c9bcac; }
+  .form input, .form textarea {
+    width: 100%; padding: 13px 14px; border-radius: 3px; border: 1px solid rgba(243,237,228,0.25);
+    background: rgba(243,237,228,0.06); color: #f3ede4; font-family: 'Karla', sans-serif; font-size: 0.95rem;
+  }
+  .form input::placeholder, .form textarea::placeholder { color: #7d7266; }
+  .form textarea { resize: vertical; min-height: 96px; }
+  .form-note { font-size: 0.8rem; color: #a89685; margin-top: -4px; }
+
+  /* ---------- Footer ---------- */
+  footer { background: #16120e; color: #a89685; padding: 48px 24px 32px; }
+  .foot-inner { max-width: 1120px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+  .foot-verse { font-family: 'Fraunces', serif; font-style: italic; color: #d8a978; font-size: 0.95rem; }
+  .foot-links { display: flex; gap: 20px; list-style: none; padding: 0; margin: 0; font-size: 0.85rem; }
+  .foot-links a { text-decoration: none; color: #a89685; }
+  .foot-links a:hover { color: #e08a52; }
+  .foot-bottom { max-width: 1120px; margin: 24px auto 0; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.08); font-size: 0.78rem; }
+
+  :focus-visible { outline: 2px solid var(--orange); outline-offset: 2px; }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="#top">
+      <span class="brand-mark"><img src="jpp.jpg" alt="JPP crest" onerror="this.parentElement.style.background='var(--charcoal)'; this.remove();"></span>
+      <span class="brand-name">Jesus Palace of Praise<small>UKUNDA &middot; DIANI</small></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#welcome">About</a></li>
+      <li><a href="#worship">Worship</a></li>
+      <li><a href="#leaders">Leaders</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#visit">Visit</a></li>
+      <li><a href="#connect">Contact</a></li>
+    </ul>
+    <a class="nav-cta" href="#visit">Plan a visit</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="hero-rays" aria-hidden="true">
+    <div class="ray" style="left:38%; animation-delay:0s;"></div>
+    <div class="ray" style="left:47%; animation-delay:1.2s;"></div>
+    <div class="ray" style="left:53%; animation-delay:2.1s;"></div>
+    <div class="ray" style="left:62%; animation-delay:.6s;"></div>
+  </div>
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="hero-inner">
+    <div class="hero-crest"><img src="jpp.jpg" alt="Jesus Palace of Praise crest" onerror="this.parentElement.style.display='none';"></div>
+    <p class="hero-verse">2 CHRONICLES 6:6</p>
+    <h1>Transformed to <em>transform</em> others</h1>
+    <p class="lede">Jesus Palace of Praise is a family in Ukunda, Diani, growing in the word of God and carrying His image into every generation we reach.</p>
+    <div class="hero-actions">
+      <a class="btn btn-solid" href="#visit">Join us this Sunday</a>
+      <a class="btn btn-ghost" href="#worship">Watch us worship</a>
+    </div>
+  </div>
+</header>
+
+<section class="welcome" id="welcome">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">Who we are</p>
+      <h2>A church built on the word, walking it out together</h2>
+    </div>
+    <div class="vm-grid">
+      <div class="vm-card">
+        <span class="num">Our vision</span>
+        <h3>A transformed church, transforming others</h3>
+        <p>We are a transformed church of God through Christ, called to transform others — carrying the change we've received in Him into our homes, our streets, and our nation.</p>
+      </div>
+      <div class="vm-card">
+        <span class="num">Our mission</span>
+        <h3>Right knowledge, right image of God</h3>
+        <p>To impact generations with the knowledge from the word of God, making everyone have the right image of God and His will for their lives.</p>
+        <span class="verse-tag">&ldquo;For now I have chosen and consecrated this house, that My name may be there forever.&rdquo; — 2 Chronicles 6:6</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="values">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">What we stand on</p>
+      <h2>Core values</h2>
+      <p>The convictions that shape how we lead, serve, and worship together.</p>
+    </div>
+    <div class="value-flow">
+      <span class="value-pill"><span class="dot"></span>Excellence</span>
+      <span class="value-pill"><span class="dot"></span>Unity</span>
+      <span class="value-pill"><span class="dot"></span>Team work</span>
+      <span class="value-pill"><span class="dot"></span>Loving</span>
+      <span class="value-pill"><span class="dot"></span>Integrity</span>
+      <span class="value-pill"><span class="dot"></span>Loyalty</span>
+      <span class="value-pill"><span class="dot"></span>Holiness</span>
+    </div>
+  </div>
+</section>
+
+<section class="motion" id="worship">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">Come as you are</p>
+      <h2>Preaching, praise &amp; worship</h2>
+      <p>A glimpse of what a gathering with us feels like — the word taught with clarity, praise that lifts the room, and worship that settles the heart.</p>
+    </div>
+    <div class="motion-tabs" role="tablist" aria-label="Worship moments">
+      <button class="motion-tab" role="tab" aria-selected="true" data-target="preach">Preaching</button>
+      <button class="motion-tab" role="tab" aria-selected="false" data-target="praise">Praise</button>
+      <button class="motion-tab" role="tab" aria-selected="false" data-target="worship-p">Worship</button>
+    </div>
+    <div class="motion-stage">
+      <div class="motion-panel" data-panel="preach" data-active="true">
+        <div class="motion-panel-grid">
+          <div class="motion-copy">
+            <h3>The word, taught plainly</h3>
+            <p>Every sermon aims to leave you with one clear thing: the right image of God, and what His will means for your week ahead.</p>
+          </div>
+          <div class="scene scene-preach" aria-hidden="true">
+            <div class="beam"></div>
+            <span class="word" style="left:30%; animation-delay:0s;">Grace</span>
+            <span class="word" style="left:52%; animation-delay:2s;">Truth</span>
+            <span class="word" style="left:68%; animation-delay:4s;">Faith</span>
+          </div>
+        </div>
+      </div>
+      <div class="motion-panel" data-panel="praise">
+        <div class="motion-panel-grid">
+          <div class="motion-copy">
+            <h3>Praise that lifts the room</h3>
+            <p>Our praise team leads with energy and heart — voices, drums, and keys building a sound that carries the whole congregation.</p>
+          </div>
+          <div class="scene scene-praise" aria-hidden="true">
+            <div class="bar" style="animation-delay:0s;"></div>
+            <div class="bar" style="animation-delay:.1s;"></div>
+            <div class="bar" style="animation-delay:.2s;"></div>
+            <div class="bar" style="animation-delay:.3s;"></div>
+            <div class="bar" style="animation-delay:.15s;"></div>
+            <div class="bar" style="animation-delay:.25s;"></div>
+            <div class="bar" style="animation-delay:.05s;"></div>
+          </div>
+        </div>
+      </div>
+      <div class="motion-panel" data-panel="worship-p">
+        <div class="motion-panel-grid">
+          <div class="motion-copy">
+            <h3>Worship that settles the heart</h3>
+            <p>When the room quiets, we linger in His presence — a space to lay things down and simply be still before God.</p>
+          </div>
+          <div class="scene scene-worship" aria-hidden="true" id="worshipParticles"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="leaders" id="leaders">
+  <div class="wrap">
+    <div class="section-head center">
+      <p class="kicker">Shepherding the flock</p>
+      <h2>Our leadership</h2>
+    </div>
+    <div class="leader-grid">
+      <div class="leader-card">
+        <div class="photo-frame" data-label="Apostle &amp; First Lady"><img src="apostle.jpg" alt="Apostle and First Lady of Jesus Palace of Praise" onerror="this.parentElement.classList.add('img-missing')"></div>
+        <h3>Apostle &amp; First Lady</h3>
+        <p class="role">Senior Leadership</p>
+        <p class="bio">Leading JPP in the word and in prayer, shepherding the church family with grace.</p>
+      </div>
+      <div class="leader-card">
+        <div class="photo-frame" data-label="Moses Changuti"><img src="moses-changuti.jpg" alt="Moses Changuti, Board Chairman" onerror="this.parentElement.classList.add('img-missing')"></div>
+        <h3>Moses Changuti</h3>
+        <p class="role">Board Chairman</p>
+        <p class="bio">Overseeing governance and stewardship, keeping the church anchored and accountable.</p>
+      </div>
+      <div class="leader-card">
+        <div class="photo-frame" data-label="Benson Ngua"><img src="benson-ngua.jpg" alt="Benson Ngua, Youth Pastor" onerror="this.parentElement.classList.add('img-missing')"></div>
+        <h3>Benson Ngua</h3>
+        <p class="role">Youth Pastor</p>
+        <p class="bio">Raising up the next generation with passion, discipleship, and bold faith.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="gallery" id="gallery">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">Life at JPP</p>
+      <h2>Gallery</h2>
+      <p>Moments from our services, our praise team, and our church family.</p>
+    </div>
+    <div class="gal-grid">
+      <div class="photo-frame" data-label="Sunday worship"><img src="worship.jpg" alt="JPP praise and worship team leading service" onerror="this.parentElement.classList.add('img-missing')"></div>
+      <div class="photo-frame" data-label="Praise team"><img src="worship.jpg" alt="Praise team" onerror="this.parentElement.classList.add('img-missing')"></div>
+      <div class="photo-frame" data-label="Congregation"><img src="gallery-1.jpg" alt="JPP congregation" onerror="this.parentElement.classList.add('img-missing')"></div>
+      <div class="photo-frame" data-label="Fellowship"><img src="gallery-2.jpg" alt="Church fellowship" onerror="this.parentElement.classList.add('img-missing')"></div>
+      <div class="photo-frame" data-label="Our building"><img src="gallery-3.jpg" alt="JPP church building" onerror="this.parentElement.classList.add('img-missing')"></div>
+      <div class="photo-frame" data-label="Community outreach"><img src="gallery-4.jpg" alt="Community outreach" onerror="this.parentElement.classList.add('img-missing')"></div>
+    </div>
+  </div>
+</section>
+
+<section class="fb-feed" id="facebook">
+  <div class="wrap">
+    <div class="section-head center">
+      <p class="kicker">Stay in the loop</p>
+      <h2>From our Facebook page</h2>
+      <p>Photos, announcements and updates from JPP — posted regularly on Facebook.</p>
+    </div>
+    <div class="fb-card">
+      <div class="fb-card-icon">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12.06C22 6.51 17.52 2 12 2S2 6.51 2 12.06c0 5 3.66 9.15 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.51 1.49-3.9 3.77-3.9 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.89h2.78l-.44 2.91h-2.34V22c4.78-.79 8.44-4.94 8.44-9.94z"/></svg>
+      </div>
+      <h3>Jesus Palace of Praise</h3>
+      <p>See our latest service highlights, event announcements and church family moments — updated straight from our page.</p>
+      <a class="btn btn-solid" href="https://www.facebook.com/share/1Gxnd17GzV/" target="_blank" rel="noopener">Open our Facebook page</a>
+    </div>
+  </div>
+</section>
+
+<section class="visit" id="visit">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">Plan your visit</p>
+      <h2>We'd love to have you</h2>
+    </div>
+    <div class="visit-grid">
+      <div>
+        <ul class="time-list">
+          <li><span class="day">Sunday Worship</span><span class="time">[Add service time]</span></li>
+          <li><span class="day">Midweek Bible Study</span><span class="time">[Add service time]</span></li>
+          <li><span class="day">Prayer Meeting</span><span class="time">[Add service time]</span></li>
+          <li><span class="day">Youth Service</span><span class="time">[Add service time]</span></li>
+        </ul>
+        <a class="btn btn-dark" href="https://www.facebook.com/share/1Gxnd17GzV/" target="_blank" rel="noopener">Follow us on Facebook</a>
+      </div>
+      <div class="map-frame">
+        <iframe src="https://www.google.com/maps?q=Ukunda,%20Diani,%20Kenya&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="JPP location map — Ukunda, Diani"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="connect" id="connect">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">Get in touch</p>
+      <h2>Let's connect</h2>
+    </div>
+    <div class="connect-grid">
+      <div>
+        <div class="contact-row">
+          <span class="lbl">Location</span>
+          <span>Ukunda, Diani, Kenya</span>
+        </div>
+        <div class="contact-row">
+          <span class="lbl">Phone</span>
+          <a href="tel:+254743264326">0743 264 326</a>
+        </div>
+        <div class="contact-row">
+          <span class="lbl">Email</span>
+          <a href="mailto:samblessings85@gmail.com">samblessings85@gmail.com</a>
+        </div>
+        <div class="contact-row">
+          <span class="lbl">Facebook</span>
+          <a href="https://www.facebook.com/share/1Gxnd17GzV/" target="_blank" rel="noopener">Jesus Palace of Praise</a>
+        </div>
+      </div>
+      <form class="form" onsubmit="event.preventDefault(); this.querySelector('.form-status').textContent='Thank you — we will be in touch soon.';">
+        <div>
+          <label for="f-name">Name</label>
+          <input id="f-name" type="text" placeholder="Your name" required>
+        </div>
+        <div>
+          <label for="f-contact">Phone or email</label>
+          <input id="f-contact" type="text" placeholder="How can we reach you?" required>
+        </div>
+        <div>
+          <label for="f-msg">Message or prayer request</label>
+          <textarea id="f-msg" placeholder="Tell us how we can pray with you, or ask a question"></textarea>
+        </div>
+        <button class="btn btn-solid" type="submit" style="align-self:flex-start;">Send message</button>
+        <p class="form-note form-status">This form is a preview — connect it to email or WhatsApp to start receiving messages.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-inner">
+    <div>
+      <p class="foot-verse">&ldquo;We are transformed to transform others.&rdquo;</p>
+    </div>
+    <ul class="foot-links">
+      <li><a href="#welcome">About</a></li>
+      <li><a href="#worship">Worship</a></li>
+      <li><a href="#facebook">Facebook feed</a></li>
+      <li><a href="#visit">Visit</a></li>
+    </ul>
+    <div class="foot-social">
+      <a href="https://www.facebook.com/share/1Gxnd17GzV/" target="_blank" rel="noopener" aria-label="Jesus Palace of Praise on Facebook">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12.06C22 6.51 17.52 2 12 2S2 6.51 2 12.06c0 5 3.66 9.15 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.51 1.49-3.9 3.77-3.9 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.89h2.78l-.44 2.91h-2.34V22c4.78-.79 8.44-4.94 8.44-9.94z"/></svg>
+      </a>
+      <a href="https://wa.me/254743264326" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.33 4.95L2 22l5.28-1.38a9.9 9.9 0 0 0 4.76 1.21h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2zm0 18.1h-.01a8.2 8.2 0 0 1-4.18-1.14l-.3-.18-3.13.82.84-3.05-.2-.31a8.19 8.19 0 0 1-1.26-4.36c0-4.53 3.69-8.22 8.24-8.22 2.2 0 4.27.86 5.83 2.42a8.17 8.17 0 0 1 2.41 5.82c0 4.53-3.69 8.2-8.24 8.2zm4.51-6.16c-.25-.12-1.46-.72-1.68-.8-.23-.08-.39-.12-.56.13-.16.24-.64.8-.79.97-.14.16-.29.18-.54.06-.25-.12-1.04-.38-1.98-1.22-.73-.65-1.23-1.46-1.37-1.7-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.15.16-.25.24-.41.08-.16.04-.31-.02-.43-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.42-.14-.01-.31-.01-.47-.01-.16 0-.43.06-.66.31-.23.25-.86.84-.86 2.04 0 1.2.88 2.36 1 2.52.12.16 1.73 2.64 4.19 3.7.59.25 1.05.4 1.4.51.59.19 1.13.16 1.55.1.47-.07 1.46-.6 1.67-1.17.2-.58.2-1.08.14-1.18-.06-.1-.22-.16-.47-.28z"/></svg>
+      </a>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    &copy; <span id="year"></span> Jesus Palace of Praise (JPP), Ukunda, Diani. All rights reserved.
+  </div>
+</footer>
+
+<div class="float-actions">
+  <a class="float-btn whatsapp" href="https://wa.me/254743264326" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.33 4.95L2 22l5.28-1.38a9.9 9.9 0 0 0 4.76 1.21h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2zm0 18.1h-.01a8.2 8.2 0 0 1-4.18-1.14l-.3-.18-3.13.82.84-3.05-.2-.31a8.19 8.19 0 0 1-1.26-4.36c0-4.53 3.69-8.22 8.24-8.22 2.2 0 4.27.86 5.83 2.42a8.17 8.17 0 0 1 2.41 5.82c0 4.53-3.69 8.2-8.24 8.2zm4.51-6.16c-.25-.12-1.46-.72-1.68-.8-.23-.08-.39-.12-.56.13-.16.24-.64.8-.79.97-.14.16-.29.18-.54.06-.25-.12-1.04-.38-1.98-1.22-.73-.65-1.23-1.46-1.37-1.7-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.15.16-.25.24-.41.08-.16.04-.31-.02-.43-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.42-.14-.01-.31-.01-.47-.01-.16 0-.43.06-.66.31-.23.25-.86.84-.86 2.04 0 1.2.88 2.36 1 2.52.12.16 1.73 2.64 4.19 3.7.59.25 1.05.4 1.4.51.59.19 1.13.16 1.55.1.47-.07 1.46-.6 1.67-1.17.2-.58.2-1.08.14-1.18-.06-.1-.22-.16-.47-.28z"/></svg>
+  </a>
+  <a class="float-btn call" href="tel:+254743264326" aria-label="Call the church">
+    <svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24 11.3 11.3 0 0 0 3.54.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.3 11.3 0 0 0 .57 3.54 1 1 0 0 1-.25 1.02z"/></svg>
+  </a>
+</div>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Worship tabs
+  var tabs = document.querySelectorAll('.motion-tab');
+  var panels = document.querySelectorAll('.motion-panel');
+  tabs.forEach(function(tab){
+    tab.addEventListener('click', function(){
+      tabs.forEach(function(t){ t.setAttribute('aria-selected','false'); });
+      panels.forEach(function(p){ p.removeAttribute('data-active'); });
+      tab.setAttribute('aria-selected','true');
+      var target = tab.getAttribute('data-target');
+      document.querySelector('.motion-panel[data-panel="'+target+'"]').setAttribute('data-active','true');
+    });
+  });
+
+  // Worship particles
+  var field = document.getElementById('worshipParticles');
+  if (field) {
+    for (var i = 0; i < 16; i++) {
+      var p = document.createElement('span');
+      p.className = 'particle';
+      p.style.left = (Math.random()*90 + 5) + '%';
+      p.style.animationDelay = (Math.random()*5) + 's';
+      p.style.animationDuration = (4 + Math.random()*3) + 's';
+      field.appendChild(p);
+    }
+  }
+</script>
+</body>
+</html>

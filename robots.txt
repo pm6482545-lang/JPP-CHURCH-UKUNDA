@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jesuspalaceofpraise.co.ke/sitemap.xml
